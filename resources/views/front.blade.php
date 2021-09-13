@@ -27,7 +27,8 @@
                     <tr>
                         <th style="width: 15%">Título</th>
                         <th style="width: 15%">Autor</th>
-                        <th style="width: 70%">Texto</th>
+                        <th style="width: 55%">Texto</th>
+                        <th style="width: 15%">Ações</th>
                     </tr>
                 </thead>
 
@@ -36,6 +37,15 @@
                         <td>{{ $texto->titulo }}</td>
                         <td>{{ $texto->autor }}</td>
                         <td>{{ $texto->conteudo }}</td>
+                        <td>
+                            <a href="{{route('textos.editar', $texto->id)}}" class="btn btn-primary btn-sm" title="Editar">
+                                <i class="fa fa-edit"></i>
+                            </a>
+                        |
+                            <a href="{{route('textos.excluir', $texto->id)}}" class="btn btn-danger btn-sm" title="Excluir">
+                                <i class="fa fa-trash"></i>
+                            </a>
+                        </td>
                     </tr>
                 </tbody>
             @empty

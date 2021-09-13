@@ -37,4 +37,18 @@ class textosController extends Controller
             return redirect()->route('textos.atualizar')->with('Erro', 'Deu ruim, tenta outra vez.');
         }
     }
+
+    public function editar($id){
+        $texto = $this->textoM->find($id);
+
+        return view('editar', compact('texto'));
+    }
+
+    public function atualizar(Request $request){
+
+    }
+
+    public function excluir($id){
+
+    }
 }
